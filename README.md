@@ -22,5 +22,12 @@ Some branches that exist right now are:
 For any specific branch, you can inspect `Main.java` to see what runs are interesting
 for that exploration, and run it with `./gradlew :app:run`.
 
+Everything will go much more easily if you install [`nix`] and enable [flakes] -- you can
+then run `nix develop` to get exactly the same development shell that I have. However,
+if you don't want to, you can also run the examples as long as you have a `kotlin`
+compiler and a JDK somewhere on your path.
+
 [`adt`]: https://github.com/jisantuc/kotlin-adventures/tree/adt
 [`thunking`]: https://github.com/jisantuc/kotlin-adventures/tree/thunking
+[`nix`]: https://nix.dev/tutorials/install-nix
+[flakes]: https://nixos.wiki/wiki/Flakes
