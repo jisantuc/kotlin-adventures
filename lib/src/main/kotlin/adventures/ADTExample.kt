@@ -29,7 +29,7 @@ final data class Some<A>(val value: A) : Option<A>() {
 enum class Config {
         ConfigA,
         ConfigB,
-        ConfigC
+        ConfigC;
 }
 
 object Cata {
