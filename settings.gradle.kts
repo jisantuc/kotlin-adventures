@@ -10,3 +10,4 @@
 
 rootProject.name = "kotlin-scripts"
 include("lib")
+include("app")
