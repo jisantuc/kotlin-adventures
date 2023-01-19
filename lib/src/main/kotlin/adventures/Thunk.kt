@@ -1,8 +1,20 @@
 package adventures
 
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
+
 class Thunk<A>(val f: (u: Unit) -> A) {
 
-    fun run(): A = f(Unit);
+    suspend fun run(): A {
+      delay(1000);
+      return f(Unit);
+    }
+
+    fun runSync(): A {
+      java.lang.Thread.sleep(1000L);
+      return f(Unit);
+    }
 
     companion object Constructors {
         fun <A, Out> delay(f: (a: A) -> Out, a: A) = Thunk { _: Unit -> f(a) }
@@ -15,4 +27,11 @@ class Thunk<A>(val f: (u: Unit) -> A) {
     }
 
     // etc.
+}
+
+// TODO -- variadic thunk args, launch them all
+object Combinators {
+  fun <A> concurrently(vararg thunks: Thunk<A>): Unit = runBlocking {
+    thunks.iterator().forEach { t -> launch { t.run() } }
+  }
 }
