@@ -23,4 +23,4 @@ For any specific branch, you can inspect `Main.java` to see what runs are intere
 for that exploration, and run it with `./gradlew :app:run`.
 
 [`adt`]: https://github.com/jisantuc/kotlin-adventures/tree/adt
-[`thunkings`]: https://github.com/jisantuc/kotlin-adventures/tree/thunking
+[`thunking`]: https://github.com/jisantuc/kotlin-adventures/tree/thunking
