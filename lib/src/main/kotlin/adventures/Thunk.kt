@@ -29,7 +29,6 @@ class Thunk<A>(val f: (u: Unit) -> A) {
     // etc.
 }
 
-// TODO -- variadic thunk args, launch them all
 object Combinators {
   fun <A> concurrently(vararg thunks: Thunk<A>): Unit = runBlocking {
     thunks.iterator().forEach { t -> launch { t.run() } }
